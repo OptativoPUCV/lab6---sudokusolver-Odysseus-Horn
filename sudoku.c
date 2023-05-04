@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
-
+const int M_ROWS = 9;
+const int M_COLUMN = 9;
 
 typedef struct{
    int sudo[9][9];
 }Node;
+
 
 Node* createNode(){
   Node* n=(Node*) malloc(sizeof(Node));
@@ -43,9 +45,83 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
+//funcion para verificar si existe un unico numero dado.
+int has_unique_rows(int sudoku[M_ROWS][M_COLUMN], int row)
+{
+  int verify[10];
 
-    return 1;
+  for(int i = 0 ; i < 9 ; i++)
+  { 
+    if(sudoku[row][i] != 0)
+    {
+      verify[sudoku[row][i]] +=1;
+
+      if(verify[sudoku[row][i]] == 2) return 0;
+    }
+  }
+
+  return 1;
+}
+
+int has_unique_columns(int sudoku[M_ROWS][M_COLUMN], int column)
+{
+  int verify[10];
+
+  for(int i = 0 ; i < 9 ; i++)
+  { 
+    if(sudoku[i][column] != 0)
+    {
+      verify[sudoku[i][column]] +=1;
+
+      if(verify[sudoku[i][column]] == 2) return 0;
+    }
+  }
+
+  return 1;
+}
+
+
+int has_valid_submatrix(int sudoku[M_ROWS][M_COLUMN], int k)
+{  
+  int verify[10];
+
+
+  for(int p=0 ; p<9 ; p++){
+    int i=3*(k/3) + (p/3) ;
+    int j=3*(k%3) + (p%3) ;
+
+    if(sudoku[i][j] != 0)
+    {
+      verify[sudoku[i][j]] +=1;
+
+      if(verify[sudoku[i][j]] == 2) return 0;
+    }
+  }
+  return 1;
+}
+
+
+int is_valid(Node* n){
+  
+  for(int i = 0 ; i < 9 ; i++)
+  {
+    if(has_valid_rows(n->sudo, i) == 0) return 0;
+    for(int j = 0 ; j < 9; j++)
+    {
+      if(has_valid_columns(n->sudo, j) == 0) return 0;
+    }
+  }
+
+  for(int k = 0 ; k < 9; k++)
+  {
+    has_valid_submatrix(n->sudo, k);
+  }
+
+  
+
+
+  
+  return 1;
 }
 
 

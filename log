@@ -4,3 +4,18 @@ Wed 03 May 2023 03:25:07 PM UTC:
  tests:  2|4
 total_score: 15/70
 9616161
+Thu 04 May 2023 01:13:01 AM UTC: 
+ sudoku.c | 77 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 76 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:108:8: error: implicit declaration of function ‘has_valid_rows’ [-Werror=implicit-function-declaration]
+  108 |     if(has_valid_rows(n->sudo, i) == 0) return 0;
+      |        ^~~~~~~~~~~~~~
+sudoku.c:111:10: error: implicit declaration of function ‘has_valid_columns’; did you mean ‘has_unique_columns’? [-Werror=implicit-function-declaration]
+  111 |       if(has_valid_columns(n->sudo, j) == 0) return 0;
+      |          ^~~~~~~~~~~~~~~~~
+      |          has_unique_columns
+cc1: all warnings being treated as errors
+Compilation failed
+d9a9046
