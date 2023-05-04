@@ -105,10 +105,10 @@ int is_valid(Node* n){
   
   for(int i = 0 ; i < 9 ; i++)
   {
-    if(has_valid_rows(n->sudo, i) == 0) return 0;
+    if(has_unique_rows(n->sudo, i) == 0) return 0;
     for(int j = 0 ; j < 9; j++)
     {
-      if(has_valid_columns(n->sudo, j) == 0) return 0;
+      if(has_unique_columns(n->sudo, j) == 0) return 0;
     }
   }
 
