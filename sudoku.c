@@ -48,7 +48,7 @@ void print_node(Node* n){
 //funcion para verificar si existe un unico numero dado.
 int has_unique_rows(int sudoku[M_ROWS][M_COLUMN], int row)
 {
-  int verify[10];
+  int *verify = (int*) calloc(10, sizeof(int));
 
   for(int i = 0 ; i < 9 ; i++)
   { 
@@ -65,7 +65,7 @@ int has_unique_rows(int sudoku[M_ROWS][M_COLUMN], int row)
 
 int has_unique_columns(int sudoku[M_ROWS][M_COLUMN], int column)
 {
-  int verify[10];
+  int *verify = (int*) calloc(10, sizeof(int));
 
   for(int i = 0 ; i < 9 ; i++)
   { 
@@ -83,7 +83,7 @@ int has_unique_columns(int sudoku[M_ROWS][M_COLUMN], int column)
 
 int has_valid_submatrix(int sudoku[M_ROWS][M_COLUMN], int k)
 {  
-  int verify[10];
+  int *verify = (int*) calloc(10, sizeof(int));
 
 
   for(int p=0 ; p<9 ; p++){
@@ -114,13 +114,10 @@ int is_valid(Node* n){
 
   for(int k = 0 ; k < 9; k++)
   {
-    has_valid_submatrix(n->sudo, k);
+    if(has_valid_submatrix(n->sudo, k) == 0) return 0;
   }
 
-  
 
-
-  
   return 1;
 }
 
