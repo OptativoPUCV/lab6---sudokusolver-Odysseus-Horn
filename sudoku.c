@@ -57,10 +57,16 @@ int has_unique_rows(int sudoku[M_ROWS][M_COLUMN], int row)
     {
       verify[sudoku[row][i]] +=1;
 
-      if(verify[sudoku[row][i]] == 2) return 0;
+      if(verify[sudoku[row][i]] == 2) 
+      {
+        free(verify);
+        return 0;
+      }
+      
     }
   }
 
+  free(verify);
   return 1;
 }
 
@@ -74,10 +80,15 @@ int has_unique_columns(int sudoku[M_ROWS][M_COLUMN], int column)
     {
       verify[sudoku[i][column]] +=1;
 
-      if(verify[sudoku[i][column]] == 2) return 0;
+      if(verify[sudoku[i][column]] == 2) 
+      {
+        free(verify);
+        return 0;
+      }
     }
   }
 
+  free(verify);
   return 1;
 }
 
@@ -95,9 +106,16 @@ int has_valid_submatrix(int sudoku[M_ROWS][M_COLUMN], int k)
     {
       verify[sudoku[i][j]] +=1;
 
-      if(verify[sudoku[i][j]] == 2) return 0;
+      if(verify[sudoku[i][j]] == 2) 
+      {
+        free(verify);
+        return 0;
+      }
+      
     }
   }
+
+  free(verify);
   return 1;
 }
 
@@ -143,13 +161,9 @@ List* get_adj_nodes(Node* n){
 
           newNode->sudo[i][j] = k;
 
-          if(is_valid(newNode) == 1)
-          {
+          
             pushBack(list, newNode);
-          }
-          else
-            free(newNode);
-            
+          
         }
       }
       
