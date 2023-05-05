@@ -160,7 +160,7 @@ List* get_adj_nodes(Node* n){
           valido = 1;
 
           newNode->sudo[i][j] = k;
-          print_node(newNode);
+          //print_node(newNode);
           if(is_valid(newNode) == 1)
           {
             pushBack(list, newNode);
