@@ -14,6 +14,7 @@ Node* createNode(){
   return n;
 }
 
+
 Node* copy(Node* n){
     Node* new=(Node*) malloc(sizeof(Node));
     *new = *n;
@@ -142,13 +143,9 @@ List* get_adj_nodes(Node* n){
 
           newNode->sudo[i][j] = k;
 
-          if(is_valid(newNode) == 1)
-          {
-            pushBack(list, newNode);
-          }
-          else
-            free(newNode);
-            
+          
+          pushBack(list, newNode);
+          
         }
       }
 
