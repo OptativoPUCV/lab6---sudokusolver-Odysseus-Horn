@@ -165,7 +165,7 @@ List* get_adj_nodes(Node* n){
           {
             pushBack(list, newNode);
             //printf("-----\n");
-            //print_node(newNode);
+            print_node(newNode);
 
           }
           else{
