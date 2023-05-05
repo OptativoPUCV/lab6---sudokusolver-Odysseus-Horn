@@ -156,10 +156,11 @@ List* get_adj_nodes(Node* n){
         for(int k = 1 ; k <= 9 ; k++)
         { 
 
-           newNode= copy(n);
+          newNode= copy(n);
           valido = 1;
 
           newNode->sudo[i][j] = k;
+            print_node(newNode);
 
           if(is_valid(newNode) == 1)
           {
@@ -167,7 +168,6 @@ List* get_adj_nodes(Node* n){
           }
           else{
             free(newNode);
-            print_node(newNode);
           }
           
         }
