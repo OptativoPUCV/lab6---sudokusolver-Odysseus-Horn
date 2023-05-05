@@ -167,7 +167,7 @@ List* get_adj_nodes(Node* n){
           }
           else{
             free(newNode);
-            print_node(newNode);
+            //print_node(newNode);
           }
           
         }
