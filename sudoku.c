@@ -167,18 +167,19 @@ List* get_adj_nodes(Node* n){
           }
           else{
             free(newNode);
+            printf_node(newNode);
           }
           
         }
         break;
       }
            
-    }/*
+    }
     if(valido)
     {
       break;
     }
-    */
+    
   }
 
   

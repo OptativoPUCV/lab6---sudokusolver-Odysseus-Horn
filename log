@@ -134,3 +134,15 @@ sudoku.c:147:7: error: variable ‘valido’ set but not used [-Werror=unused-bu
 cc1: all warnings being treated as errors
 Compilation failed
 43e6acd
+Fri 05 May 2023 03:04:54 PM UTC: 
+ sudoku.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:170:13: error: implicit declaration of function ‘printf_node’; did you mean ‘print_node’? [-Werror=implicit-function-declaration]
+  170 |             printf_node(newNode);
+      |             ^~~~~~~~~~~
+      |             print_node
+cc1: all warnings being treated as errors
+Compilation failed
+0ba7085
