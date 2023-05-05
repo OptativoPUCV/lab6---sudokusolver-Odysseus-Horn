@@ -143,7 +143,10 @@ List* get_adj_nodes(Node* n){
           newNode->sudo[i][j] = k;
 
           if(is_valid(newNode) == 1)
+          {
             pushBack(list, newNode);
+          }
+            
         }
       }
 
