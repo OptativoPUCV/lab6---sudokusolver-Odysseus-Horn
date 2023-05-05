@@ -146,3 +146,9 @@ sudoku.c:170:13: error: implicit declaration of function ‘printf_node’; did 
 cc1: all warnings being treated as errors
 Compilation failed
 0ba7085
+Fri 05 May 2023 03:05:03 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  7|1
+total_score: 55/70
+8558be1
